@@ -32,6 +32,10 @@ namespace HttpClientTestProj
             
             //Adds HttpClientFactory into DI
             services.AddHttpClient();
+            services.AddHttpClient("meta", c =>
+            {
+                c.BaseAddress = new Uri(Configuration.GetValue<string>("MetaAPI");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
